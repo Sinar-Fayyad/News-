@@ -1,0 +1,32 @@
+.search_container{
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    text-align: center;
+    margin:2em 0 ;
+}
+
+.search_bar {
+    padding: 0.5em 1em; 
+    border: 1px solid var(--main-color);
+    border-radius:50px ;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    width:80%;
+    height:5%;
+    position:relative;
+    margin:1vw;
+}
+
+.search{
+    width:90%;
+    height:3em;
+    font-size: 16px;
+    border:none;
+}
+
+.search_btn{
+    margin-left:-2em;
+}
