@@ -8,4 +8,4 @@ const Button = ({ title , className, onClickListener}) => {
     );
 }
 
-export default Button
+export default Button;

@@ -1,0 +1,23 @@
+@import '../../styles/colors.css';
+
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: black;
+}
+
+.category-btn {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-button:hover {
+    background-color: var(--color-primary-dark);
+}
