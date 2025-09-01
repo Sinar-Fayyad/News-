@@ -1,15 +1,14 @@
-.main-color {
-    background-color:  rgb(178, 42, 212);
-}
-
-.text-color{
-    color: rgb(255,255,255);
-}
-
-.secondary-color{
-    background-color: rgb(134, 2, 134);
-}
-
-.text-color2 {
-    color:rgb(223, 97, 255);
+:root {
+    --main-light-color: rgba(26, 48, 71, 0.9);
+    --text-color: rgba(230, 230, 230, 0.95);
+    --gray-bg: rgba(235, 237, 240, 0.9);
+    --navy-color: rgba(26, 37, 85, 1);
+    --gold-color: rgb(255, 164, 36);
+    --secondary-color: rgb(240, 200, 140);
+    --main-black-text: rgb(20, 20, 20);
+    --sec-black-text: rgba(70, 70, 70, 0.85);
+    --error-color: rgb(255, 60, 60);
+    --success-color: rgb(70, 255, 70);
+    --info-color: rgb(70, 70, 255);
+    --shadow: rgba(0, 0, 0, 0.2);
 }
