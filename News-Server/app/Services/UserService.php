@@ -15,7 +15,6 @@ class UserService
 
         $validator = Validator::make($data, [
             'username' => 'sometimes|required|string|max:255',
-            'email' => 'sometimes|required|email|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -23,7 +22,6 @@ class UserService
         }
        
         $user->username = $data["username"]? $data["username"]: $user->username; 
-        $user->email = $data["email"]?$data["email"]:$user->email;
 
         $user->save();
         return $user;

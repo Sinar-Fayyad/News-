@@ -22,7 +22,8 @@ class NewsController extends Controller
             $news = new News;
             $news = NewsService::addNews($news, $request->all());
             return $this->responseJSON($news);
-        } catch (ValidationException $e) {
+        } 
+        catch (ValidationException $e) {
             return $this->responseJSON(null, $e->errors(), 422);
         }
     }
