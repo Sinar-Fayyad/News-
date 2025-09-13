@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Register/title>
+</head>
+<body>
+    <main>
+        <div class="register">
+            <div class="login-form">
+                <div class="form">
+                    <h2 class="title">Welcome Back</h2>
+                    <input type="email" name="username" id="username" placeholder="Enter Your Username">
+                    <input type="password" name="password" id="pwd" placeholder="Enter Your Password">
+                    <input type="checkbox" name="showPassword" id="showPassword" class="hide-checkbox" onclick= "pwd.type = this.checked ? 'text' : 'password'">
+                    <label for="showPassword" class="custom-checkbox"></label>
+                    <input type="checkbox" name="remember-me" id="rememberMe">
+                    <p for="signup" style="display: inline;">Don't have an account ? </p><button>Sign Up</button>
+                </div>
+            </div>
+            <div class="login sidetext"></div>
+        </div>
+        <div class="register">
+            <div class="signup-sidetext"></div>
+            <div class="signup-form">
+                <input type="text" name="Name" id="name">
+                <input type="text" name="lastName" id="lastName">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@import url('./roots.css');
+
+.register {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding);
+}
+
+.hide-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.custom-checkbox {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    background-image: url(./Assets/view.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hide-checkbox:checked + .custom-checkbox {
+    background-image: url(./Assets/sleep.gif);
+}
