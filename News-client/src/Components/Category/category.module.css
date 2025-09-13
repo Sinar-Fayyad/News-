@@ -4,15 +4,21 @@
 .categories {
     display: flex;
     justify-content: space-around;
-    padding: 10px 0;
     background-color: black;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 30px;
+    align-items: center;
 }
 
 .category-btn {
-    background-color: var(--color-primary);
+    background-color: var(--error);
     color: white;
+    text-decoration: none;
     border: none;
     border-radius: 5px;
+    height: 20px;
+    
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s;

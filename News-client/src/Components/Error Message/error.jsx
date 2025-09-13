@@ -1,4 +1,4 @@
-import styles from './style.module.css'
+import styles from './error.module.css'
 
 const ErrorMessage = ({ message, errorCode, onClose }) => {
 

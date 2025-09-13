@@ -1,8 +1,6 @@
-import './card.css';
+const Card = ({image, title, journalist, Time2Read, category}) => {
 
-const Card = ({ image, title, journalist, Time2Read, category }) => {
-
-    return (
+    return(
         <div className="card">
             <img className="card-image" src={image} alt="photo" />
             <div className="card-texts">

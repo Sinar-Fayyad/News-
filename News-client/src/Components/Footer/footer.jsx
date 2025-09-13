@@ -1,4 +1,4 @@
-import styles from './style.module.css'
+import styles from './footer.module.css'
 
 const Footer = ()=>{
 
@@ -9,4 +9,4 @@ const Footer = ()=>{
     );
 }
 
-export default Footer
+export default Footer;

@@ -1,4 +1,4 @@
-import './style.module.css'
+import './input.module.css'
 
 const Input = ({ type, name, hint, className, required , onChangeListener }) => {
 
@@ -14,4 +14,4 @@ const Input = ({ type, name, hint, className, required , onChangeListener }) => 
     );
 }
 
-export default Input
+export default Input;

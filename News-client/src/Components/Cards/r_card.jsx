@@ -1,5 +1,3 @@
-import './r_card.css';
-
 const Rated_card = ({ image, title, journalist, journal, Time2Read, category }) => {
     return (
         <div className="rated-card">

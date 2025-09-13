@@ -1,4 +1,4 @@
-import styles from './style.module.css';
+import styles from './nav.module.css';
 import Logo from '../Logo/index'
 import Button from '../Button/index'
 import { useNavigate , useLocation } from "react-router-dom";
@@ -23,4 +23,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar
+export default Navbar;

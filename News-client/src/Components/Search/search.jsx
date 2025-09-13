@@ -1,4 +1,4 @@
-import styles from './style.module.css'
+import styles from './search.module.css'
 import { Search } from 'lucide-react';
 import Input from '../Input'
 
@@ -20,4 +20,4 @@ const SearchBar = () => {
     );
 }
 
-export default SearchBar
+export default SearchBar;
