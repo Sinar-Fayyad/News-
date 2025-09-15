@@ -1,34 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <title>Register/title>
-</head>
-<body>
-    <main>
-        <div class="register">
-            <div class="login-form">
-                <div class="form">
-                    <h2 class="title">Welcome Back</h2>
-                    <input type="email" name="username" id="username" placeholder="Enter Your Username">
-                    <input type="password" name="password" id="pwd" placeholder="Enter Your Password">
-                    <input type="checkbox" name="showPassword" id="showPassword" class="hide-checkbox" onclick= "pwd.type = this.checked ? 'text' : 'password'">
-                    <label for="showPassword" class="custom-checkbox"></label>
-                    <input type="checkbox" name="remember-me" id="rememberMe">
-                    <p for="signup" style="display: inline;">Don't have an account ? </p><button>Sign Up</button>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="login.css">
+        <title>Register</title>
+    </head>
+
+    <body>
+        <main>
+            <div class="register" id="log">
+                <div class="form-container">
+                    <div class="form">
+                        <h2 class="title">Welcome Back</h2>
+                        <div>
+                            <input type="email" name="username" class="username" id="username" placeholder="Enter Your Username">
+                        </div>
+                        <div>
+                            <input type="password" name="password" class="pwd" id="pwd" placeholder="Enter Your Password">
+                            <input type="checkbox" name="showPassword" id="showPassword" class="hide-checkbox"
+                                onclick="pwd.type = this.checked ? 'text' : 'password'">
+                            <label for="showPassword" class="custom-checkbox"></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="remember-me" id="rememberMe"><label for="rememberMe">Remember
+                                Me</label>
+                        </div>
+                        <input type="submit" value="Login" onclick="saveCredentials()">
+                        <div>
+                            <p>Don't have an account ? </p><button onclick="showSignup()">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="login sidetext">
+                    <div>
+                        <h3>Welcome to Top News</h3>
+                        <p>Stay updated with the latest headlines, breaking news, and in-depth stories from around the
+                            world. Log in to personalize your news feed and never miss a story.</p>
+                    </div>
                 </div>
             </div>
-            <div class="login sidetext"></div>
-        </div>
-        <div class="register">
-            <div class="signup-sidetext"></div>
-            <div class="signup-form">
-                <input type="text" name="Name" id="name">
-                <input type="text" name="lastName" id="lastName">
+            <div class="register hidden" id="sign">
+                <div class="sidetext">
+                    <div>
+                        <h3>Welcome to Top News</h3>
+                        <p>Stay updated with the latest headlines, breaking news, and in-depth stories from around the
+                            world. Log in to personalize your news feed and never miss a story.</p>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="form">
+                        <h2 class="title">Sign Up</h2>
+                        <div style="gap: 10px;">
+                            <input type="text" name="Name" id="name" class="name" placeholder="Name">
+                            <input type="text" name="lastName" id="lastName" class="l-name" placeholder="Last Name">
+                        </div>
+                        <div>
+                            <input type="email" name="username" class="username" id="newUsername" placeholder="Enter Your Username">
+                        </div>
+                        <div>
+                            <input type="password" name="password" class="pwd" id="s_pwd" placeholder="Enter Your Password">
+                            <input type="checkbox" name="showPassword" id="s_showPassword" class="hide-checkbox"
+                                onclick="s_pwd.type = this.checked ? 'text' : 'password'">
+                            <label for="s_showPassword" class="custom-checkbox"></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="remember-me" id="rememberMe"><label for="rememberMe">Remember
+                                Me</label>
+                        </div>
+                        <input type="submit" value="Sing Up" onclick="saveCredentials()">
+                        <div>
+                            <p>You have an account ? </p><button onclick="showLogin()">Login</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </main>
-</body>
+        </main>
+    </body>
+    <script src="register.js"></script>
+
 </html>
