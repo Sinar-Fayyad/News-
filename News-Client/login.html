@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="login.css">
-        <title>Register</title>
+        <title>Login</title>
     </head>
 
     <body>
@@ -15,22 +15,26 @@
                     <div class="form">
                         <h2 class="title">Welcome Back</h2>
                         <div>
-                            <input type="email" name="username" class="username" id="username" placeholder="Enter Your Username">
+                            <label for="username">Email</label>
+                            <input type="email" name="username" class="username" id="username" placeholder="JoeDoe@example.com">
                         </div>
                         <div>
-                            <input type="password" name="password" class="pwd" id="pwd" placeholder="Enter Your Password">
-                            <input type="checkbox" name="showPassword" id="showPassword" class="hide-checkbox"
-                                onclick="pwd.type = this.checked ? 'text' : 'password'">
-                            <label for="showPassword" class="custom-checkbox"></label>
+                            <label for="pwd">Password</label>
+                            <div class="password-container">
+                                <input type="password" name="password" class="pwd" id="pwd" placeholder="********">
+                                <input type="checkbox" name="showPassword" id="showPassword" class="hide-checkbox"
+                                    onclick="pwd.type = this.checked ? 'text' : 'password'">
+                                <label for="showPassword" class="custom-checkbox"></label>
+                            </div>
                         </div>
-                        <div>
-                            <input type="checkbox" name="remember-me" id="rememberMe"><label for="rememberMe">Remember
-                                Me</label>
-                        </div>
-                        <input type="submit" value="Login" onclick="saveCredentials()">
-                        <div>
-                            <p>Don't have an account ? </p><button onclick="showSignup()">Sign Up</button>
-                        </div>
+<div class="remember-me">
+    <input type="checkbox" name="remember-me" id="rememberMe"><label for="rememberMe">Remember Me</label>
+</div>
+                        <input type="submit" value="Log In" onclick="loginUser()">
+<div class="switch" style="display: flex; align-items: center; gap: 8px;">
+    <p style="margin: 0;">Don't have an account ?</p>
+    <button onclick="showSignup()">Sign Up</button>
+</div>
                     </div>
                 </div>
                 <div class="login sidetext">
@@ -52,32 +56,43 @@
                 <div class="form-container">
                     <div class="form">
                         <h2 class="title">Sign Up</h2>
-                        <div style="gap: 10px;">
-                            <input type="text" name="Name" id="name" class="name" placeholder="Name">
-                            <input type="text" name="lastName" id="lastName" class="l-name" placeholder="Last Name">
+                        <div class="name-row">
+                            <div>
+                                <label for="name">First Name</label>
+                                <input type="text" name="Name" id="name" class="name" placeholder="Joe">
+                            </div>
+                            <div>
+                                <label for="lastName">Last Name</label>
+                                <input type="text" name="lastName" id="lastName" class="l-name" placeholder="Doe">
+                            </div>
                         </div>
                         <div>
-                            <input type="email" name="username" class="username" id="newUsername" placeholder="Enter Your Username">
+                            <label for="newUsername">Email</label>
+                            <input type="email" name="username" class="username" id="newUsername" placeholder="JoeDoe@example.com">
                         </div>
                         <div>
-                            <input type="password" name="password" class="pwd" id="s_pwd" placeholder="Enter Your Password">
-                            <input type="checkbox" name="showPassword" id="s_showPassword" class="hide-checkbox"
-                                onclick="s_pwd.type = this.checked ? 'text' : 'password'">
-                            <label for="s_showPassword" class="custom-checkbox"></label>
+                            <label for="s_pwd">Password</label>
+                            <div class="password-container">
+                                <input type="password" name="password" class="pwd" id="s_pwd" placeholder="********">
+                                <input type="checkbox" name="showPassword" id="s_showPassword" class="hide-checkbox"
+                                    onclick="s_pwd.type = this.checked ? 'text' : 'password'">
+                                <label for="s_showPassword" class="custom-checkbox"></label>
+                            </div>
                         </div>
-                        <div>
-                            <input type="checkbox" name="remember-me" id="rememberMe"><label for="rememberMe">Remember
-                                Me</label>
+                        <div class="remember-me">
+                            <input type="checkbox" name="remember-me" id="rememberMe"><label for="rememberMe">Remember Me</label>
                         </div>
                         <input type="submit" value="Sign Up" onclick="registerUser()">
-                        <div>
-                            <p>You have an account ? </p><button onclick="showLogin()">Login</button>
+                        <div class="switch" style="display: flex; align-items: center; gap: 10px; justify-content: flex-start;">
+                            <p style="margin: 0;">You have an account ?</p>
+                            <button onclick="showLogin()">Login</button>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="register.js"></script>
 
 </html>

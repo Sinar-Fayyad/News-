@@ -22,6 +22,8 @@ class NewsService
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'author' => 'required|string|max:255',
+            'image' => 'nullable|string|max:255',
+            'category' => 'nullable|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -31,6 +33,8 @@ class NewsService
         $news->title = $data["title"];
         $news->content = $data["content"];
         $news->author = $data["author"];
+        $news->image = $data["image"] ?? null;
+        $news->category = $data["category"] ?? null;
 
         $news->save();
         return $news;

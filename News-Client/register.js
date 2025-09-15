@@ -10,41 +10,57 @@ function showLogin() {
     document.getElementById('sign').classList.add('hidden');
 }
 
-// Remember Me functionality for login
-function saveCredentials() {
-    const username = document.getElementById('username').value;
+// Login function
+async function loginUser() {
+    const email = document.getElementById('username').value;
     const password = document.getElementById('pwd').value;
     const rememberMe = document.getElementById('rememberMe').checked;
 
-    if (rememberMe) {
-        localStorage.setItem('username', username);
-        localStorage.setItem('password', password);
-    } else {
-        localStorage.removeItem('username');
-        localStorage.removeItem('password');
+    try {
+        const res = await axios.post("http://localhost:8000/v0.1/login", {
+            email: email,
+            password: password,
+        }, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const token = res.data.token;
+        localStorage.setItem('token', token);
+        if (rememberMe) {
+            localStorage.setItem('username', email);
+            localStorage.setItem('password', password);
+        } else {
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+        }
+        alert('Login successful!');
+        window.location.href = 'index.html';
+    } catch (error) {
+        alert('Login failed: ' + (error.response ? error.response.data.message : error.message));
     }
+}
+
+// Remember Me functionality for login (now handled in loginUser)
+function saveCredentials() {
+    // This can be removed or kept for compatibility, but login is now handled by loginUser
 }
 
 // Register user function
 const token = localStorage.getItem("token");
 
 async function registerUser() {
-    const name = document.getElementById('name').value;
+    const firstName = document.getElementById('name').value;
     const lastName = document.getElementById('lastName').value;
-    const username = name + ' ' + lastName;
     const email = document.getElementById('newUsername').value;
     const password = document.getElementById('s_pwd').value;
 
     try {
-        const res = await axios.post("http://localhost:8000/api/v0.1/register", {
-            username: username,
+        const res = await axios.post("http://localhost:8000/v0.1/register", {
+            first_name: firstName,
+            last_name: lastName,
             email: email,
             password: password,
-        },{
-            headers:
-            {
-                Authorization: `bearer ${token}`
-            }
         });
         alert('Registration successful!');
         showLogin();
@@ -67,4 +83,3 @@ function loadCredentials() {
 }
 
 window.onload = loadCredentials;
-

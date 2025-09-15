@@ -21,6 +21,8 @@ class NewsFactory extends Factory
             'title' => $this->faker->sentence(),
             'content' => $this->faker->paragraphs(3, true),
             'author' => $this->faker->name(),
+            'image' => $this->faker->imageUrl(),
+            'category' => $this->faker->word(),
         ];
     }
 }
