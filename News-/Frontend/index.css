@@ -17,12 +17,33 @@
     height: auto;
     background: linear-gradient(to bottom right, var(--navy-color), var(--main-color));
     color: var(--text-color);
-    display: inline-block;
+    display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 10px 20px;
     box-shadow: 2px 2px 4px var(--shadow);
 }  
+
+.date-add {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding);
+}
+
+.add-holder {
+    width: 100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1000;
+}
+
+
 
 nav{
     width: 100%;

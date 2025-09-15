@@ -16,11 +16,39 @@
         </div>
         <header>
             <div class="head-container">
-                <h1 class="main-title"></h1>
-                <h3 class="subtitle"></h3>
-                <p class="date"></p>
-                <input type="search" name="news-search" id="search" placeholder="Search news" title="Search news">
+                <h1 class="main-title">Sinar Nekdi News</h1>
+                <h3 class="subtitle">Don't try Sinar's Nakad levels</h3>
             </div>
+            <div class="date-add">
+                <p class="date"></p>
+                <button class="add_news">+</button>
+            </div>
+            <div class="add-holder">
+                <div class="adder">
+                    <input type="text" name="Title" id="newNews">
+                    <input type="text" name="subTitle" id="subTitle">
+                    <input list='catList' placeholder="Select">
+                    <datalist id="catList">
+                        <option value="Art"></option>
+                        <option value="Business"></option>
+                        <option value="Culture"></option>
+                        <option value="Entertainment"></option>
+                        <option value="Fashion"></option>
+                        <option value="Food"></option>
+                        <option value="Health"></option>
+                        <option value="Politics"></option>
+                        <option value="Science"></option>
+                        <option value="Sports"></option>
+                        <option value="Startup"></option>
+                        <option value="Technology"></option>
+                        <option value="Travel"></option>
+                        <option value="World"></option>
+                    </datalist>
+                    <input type="image" src="jpg, png, gif" alt="Photo">
+                    <input type="text" name="Author" id="author">
+                </div>
+            </div>
+            <input type="search" name="news-search" id="search" placeholder="Search news" title="Search news">
         </header>
         <nav class="categories">
         </nav>
@@ -44,6 +72,7 @@
                         <p class="card-news-info">News text</p>
                         <div>
                             <p class="card-info">Journalist</p>
+                            <p class="card-info">Category</p>
                             <p class="card-info">listed date</p>
                         </div>
                     </div>
@@ -66,18 +95,7 @@
                     </div>
                     <h1 class="title">Last News</h1>
                     <section class="news">
-                        <div class="card">
-                        </div>
-                        <div class="card">
-                        </div>
-                        <div class="card">
-                        </div>
-                        <div class="card">
-                        </div>
-                        <div class="card">
-                        </div>
-                        <div class="card">
-                        </div>
+
                     </section>
                 </div>
                 <section class="trending hidden">
