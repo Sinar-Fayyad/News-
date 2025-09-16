@@ -6,9 +6,8 @@ import MainPage from "../Pages/MainPage";
 const MyRoutes = () => {
   return (
     <Routes>
-      <Route path="/auth" element={<Auth />} />
+      <Route path="/" element={<Auth />} />
       <Route element={<ProtectedRoute />}>
-        <Route path="/" element={<MainPage />} />
         <Route path="/main" element={<MainPage />} />
         {/* Add other protected routes here */}
       </Route>

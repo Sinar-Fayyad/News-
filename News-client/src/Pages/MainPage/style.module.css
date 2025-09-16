@@ -10,15 +10,13 @@
 .categories {
   width: 100%;
   height: auto;
-  padding: 10px;
   display: flex;
   background-color: var(--neutral-color);
   position: sticky;
   top: 0;
   z-index: 100;
-  gap: 15px;
-  overflow-x: auto;
-  overflow-y: hidden;
+  gap: 10px;
+  overflow-x: hidden;
   align-items: center;
   justify-content: space-around;
   box-shadow: 2px 2px 5px var(--shadow);

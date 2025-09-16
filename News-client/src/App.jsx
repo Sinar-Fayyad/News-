@@ -1,4 +1,5 @@
 import MyRoutes from './Routes/routes';
+import './App.css'
 import './Styles/colors.css'
 import './Styles/utilities.css'
 
