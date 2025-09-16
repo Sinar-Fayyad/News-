@@ -1,0 +1,34 @@
+:root {
+    --main-color: rgba(24, 45, 68, 0.9);
+    --text-color: rgba(230, 230, 230, 0.95);
+    --gray-bg: rgba(201, 202, 204, 0.9);
+    --navy-color: rgb(26, 35, 71);
+    --gold-color: rgb(255, 164, 36);
+    --secondary-color: rgb(240, 200, 140);
+    --dark: rgb(20, 20, 20);
+    --light: rgb(245, 245, 245);
+    --sec-black-text: rgba(70, 70, 70, 0.85);
+    --error-color: rgb(255, 60, 60);
+    --success-color: rgb(70, 255, 70);
+    --info-color: rgb(70, 70, 255);
+    --shadow: rgba(0, 0, 0, 0.2);
+}
+
+:root {
+    --padding: 15px;
+    --margin: 10px;
+    --radius: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dark {
+    background-color: var(--dark);
+    color: var(--text-color);
+}
+

@@ -1,0 +1,284 @@
+@import url('./roots.css');
+
+.register {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form div.inline-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.form div.inline-inputs input.name,
+.form div.inline-inputs input.l-name {
+    width: 50%;
+}
+
+.hidden {
+    display: none;
+    transition: 0.2s ease;
+}
+
+.form-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 40vw;
+    min-height: 60vh;
+    border: 1px solid var(--light);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 3px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+}
+
+.form div{
+    display: block;
+    width: 100%;
+}
+
+.name-row {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    width: 100% !important;
+}
+
+.name-row > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.name-row > div label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
+.name-row > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.name-row > div label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
+.remember-me {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+}
+
+.remember-me label {
+    font-weight: normal !important;
+    margin: 0 !important;
+}
+
+#sign .remember-me {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+}
+
+#sign .remember-me label {
+    font-weight: normal !important;
+    margin: 0 !important;
+}
+
+#rememberMe {
+    vertical-align: middle !important;
+    margin-right: 8px !important;
+    accent-color: var(--main, var(--info-color)) !important;
+}
+
+label[for="rememberMe"] {
+    font-size: 0.9rem !important;
+    color: var(--main) !important;
+    cursor: pointer !important;
+}
+
+input[type="submit"] {
+    width: auto !important;
+    padding: 8px 16px;
+    min-width: 80px;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--main, #0056b3);
+    transform: translateY(-2px);
+}
+
+button {
+    width: auto !important;
+    padding: 8px 16px;
+    min-width: 80px;
+}
+
+.switch {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    justify-content: flex-start !important;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--dark);
+}
+
+.username, .pwd, .name, .l-name {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--light);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.username:focus, .pwd:focus, .name:focus, .l-name:focus {
+    outline: none;
+    border-color: var(--primary-color, var(--info-color));
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.password-container {
+    position: relative;
+}
+
+.pwd {
+    padding-right: 50px;
+}
+
+.hide-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.custom-checkbox {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: url(./Assets/view.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+
+
+.hide-checkbox:checked + .custom-checkbox {
+    background-image: url(./Assets/sleep.gif);
+}
+
+#rememberMe {
+    vertical-align: middle;
+    margin-right: 8px;
+    accent-color: var(--main, var(--info-color));
+}
+
+label[for="rememberMe"] {
+    font-size: 0.9rem;
+    color: var(--main);
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: var(--primary-color, var(--info-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button {
+    background-color: var(--primary-color, var(--info-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--main, #0056b3);
+    transform: translateY(-2px);
+}
+
+.form-container div p {
+    font-size: 0.9rem;
+    color: var(--dark);
+    margin: var(--margin) 0 0 var(--margin);
+}
+
+.sidetext {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to bottom right, var(--navy-color), var(--main-color));
+    color: var(--text-color);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding);
+}
+
+.sidetext div {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
