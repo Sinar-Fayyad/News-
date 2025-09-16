@@ -11,27 +11,37 @@ const LoginForm = ({ toggle }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setErrorMessage] = useState(null);
 
   const navigate = useNavigate();
 
   const handleLogin = async () => {
     setLoading(true);
-    setError(null);
+    setErrorMessage(null);
     try {
-      const userData = await loginService({ email, password });
+      const res = await axios.post("http://localhost:8000/api/v0.1/login", {
+        email: email,
+        password: password,
+      });
 
-      // Check if the user is admin and redirect accordingly
-      if (
-        userData &&
-        (userData.role === "admin" || userData.is_admin === true)
-      ) {
-        navigate("/admin");
-      } else {
-        navigate("/");
+      if (res.status === 200) {
+        localStorage.setItem("token", res.data.payload.token);
+        if (
+          userData &&
+          (userData.role === "admin" || userData.is_admin === true)
+        ) {
+          navigate("/admin");
+        } else {
+          navigate("/main");
+        }
       }
-    } catch (err) {
-      setError(err.message || "Login failed");
+    } catch (error) {
+      if (error.response) {
+        setErrorMessage({
+          message: error.message,
+          code: error.response.status,
+        });
+      }
     } finally {
       setLoading(false);
     }
@@ -75,16 +85,13 @@ const LoginForm = ({ toggle }) => {
         onClick={handleLogin}
         disabled={loading}
       />
-      <div className={styles.switch} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+      <div
+        className={styles.switch}
+        style={{ display: "flex", alignItems: "center", gap: "8px" }}
+      >
         <p style={{ margin: 0 }}>Don't have an account ?</p>
         <button onClick={toggle}>Sign Up</button>
       </div>
-      {error && (
-        <ErrorMessage
-          message={error}
-          onClose={() => setError(null)}
-        />
-      )}
     </div>
   );
 };
