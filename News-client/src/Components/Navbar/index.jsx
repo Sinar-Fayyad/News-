@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './style.module.css';
 import Button from '../Button/index';
+import SearchBar from '../Search/index';
 
 const Navbar = ({
     categories = [],
@@ -21,18 +22,7 @@ const Navbar = ({
             <header className={styles.headContainer}>
                 <h1 className={styles.mainTitle}>Top News</h1>
                 <h3 className={styles.subtitle}>Stay Updated with the Latest Headlines</h3>
-                <form onSubmit={handleSearch} className={styles.searchForm}>
-                    <input
-                        type="search"
-                        name="news-search"
-                        id="search"
-                        placeholder="Search news"
-                        title="Search news"
-                        value={searchQuery}
-                        onChange={(e) => onSearchChange(e.target.value)}
-                        className={styles.searchInput}
-                    />
-                </form>
+                <SearchBar value={searchQuery} onChangeListener={onSearchChange} onSubmit={handleSearch} />
                 <Button title="Logout" className={styles.logoutBtn} onClickListener={onLogout} />
             </header>
             <nav className={styles.categories}>

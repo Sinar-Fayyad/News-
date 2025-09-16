@@ -5,16 +5,14 @@ import Input from '../Input/index';
 const SearchBar = () => {
 
     return (
-        <div className={styles.search_container}>
+        <div>
             <div className={styles.search_bar}>
+                <Search className={styles.search_btn}/>
                 <Input name="search" 
                        type="text" 
                        hint='Search...' 
                        className={`${styles.search}` }
-                       required="required" 
-                       onChangeListener={console.log('hi')}/> 
-                       {/*fetch info based on mood/country */}
-                <Search className={styles.search_btn} />
+                />
             </div>
         </div>
     );
