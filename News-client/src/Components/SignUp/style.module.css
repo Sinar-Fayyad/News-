@@ -18,19 +18,26 @@
   width: 100%;
 }
 
-.nameRow {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
+.inputGroup {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 4px;
   width: 100%;
 }
 
-.inlineInputGroup {
-  display: inline-flex !important;
-  flex-direction: column !important;
-  align-items: flex-start;
-  gap: 4px;
-  width: auto;
+.input {
+  width: 100% !important;
+  height: 40px;
+  border: 1px solid var(--light);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0 15px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nameRow > div {
+  min-width: 0;
 }
 
 .nameRow > div {

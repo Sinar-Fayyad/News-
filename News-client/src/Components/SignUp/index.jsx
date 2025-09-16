@@ -34,24 +34,23 @@ const SignUpForm = ({ toggle }) => {
   return (
     <div className={styles.form}>
       <h2 className={styles.title}>Sign Up</h2>
-      <div className={styles.nameRow}>
-        <Input
-          label="First Name"
-          type="text"
-          name="Name"
-          hint="Joe"
-          required
-          onChangeListener={(e) => setFirstName(e.target.value)}
-        />
-        <Input
-          label="Last Name"
-          type="text"
-          name="lastName"
-          hint="Doe"
-          required
-          containerClassName={styles.inlineInputGroup}
-          onChangeListener={(e) => setLastName(e.target.value)}
-        />
+      <div className={styles.inputGroup}>
+          <Input
+            label="First Name"
+            type="text"
+            name="Name"
+            hint="Joe"
+            required
+            onChangeListener={(e) => setFirstName(e.target.value)}
+          />
+          <Input
+            label="Last Name"
+            type="text"
+            name="lastName"
+            hint="Doe"
+            required
+            onChangeListener={(e) => setLastName(e.target.value)}
+          />
       </div>
       <Input
         label="Email"
