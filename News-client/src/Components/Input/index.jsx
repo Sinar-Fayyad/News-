@@ -5,9 +5,8 @@ const Input = ({ type, name, hint, className, required, onChangeListener, label,
     const inputType = isPassword ? (showPassword ? "text" : "password") : type;
 
     return (
-        <div className={`${styles.inputGroup} ${containerClassName || ''}`.trim()}>
-            {label && <label htmlFor={name}>{label}</label>}
-            <div className={styles.inputContainer}>
+        <div className={styles.inputGroup}>
+            <label type={name}>{label}</label>
                 <input
                     type={inputType}
                     name={name}
@@ -29,7 +28,7 @@ const Input = ({ type, name, hint, className, required, onChangeListener, label,
                         <label htmlFor={`showPassword-${name}`} className={styles.customCheckbox}></label>
                     </>
                 )}
-            </div>
+            
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import styles from './style.module.css'
 import { Search } from 'lucide-react';
-import Input from '../Input'
+import Input from '../Input/index';
 
 const SearchBar = () => {
 
