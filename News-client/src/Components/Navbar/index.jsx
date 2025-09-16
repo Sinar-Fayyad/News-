@@ -10,7 +10,6 @@ const Navbar = ({
     onSearchChange = () => {},
     onLogout = () => {}
 }) => {
-    const currentDate = new Date().toLocaleDateString();
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -22,7 +21,6 @@ const Navbar = ({
             <header className={styles.headContainer}>
                 <h1 className={styles.mainTitle}>Top News</h1>
                 <h3 className={styles.subtitle}>Stay Updated with the Latest Headlines</h3>
-                <p className={styles.date}>{currentDate}</p>
                 <form onSubmit={handleSearch} className={styles.searchForm}>
                     <input
                         type="search"
