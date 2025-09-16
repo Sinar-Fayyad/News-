@@ -6,7 +6,7 @@ const ProtectedRoute = () => {
 
     useEffect(() => {
         if (!localStorage.getItem("token")) {
-            navigate("/signup");
+            navigate("/auth");
         }
     }, [navigate]);
 

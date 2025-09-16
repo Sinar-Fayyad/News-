@@ -7,8 +7,8 @@
 }
 
 .search_bar {
-    padding: 0.5em 1em; 
-    border: 1px solid var(--main-color);
+    padding: 0.5em 1em;
+    border: 1px solid var(--primary-color);
     border-radius:50px ;
     display: flex;
     align-items: center;

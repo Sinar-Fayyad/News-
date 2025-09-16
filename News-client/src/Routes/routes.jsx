@@ -1,17 +1,19 @@
-import { Routes, Route } from "react-router-dom"
-import ProtectedRoute from "./ProtectedRoute"
+import { Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute";
+import Auth from "../Pages/Auth";
+import MainPage from "../Pages/MainPage";
 
 const MyRoutes = () => {
-
-    return (
-        <Routes>
-            {/* <Route path="/" element={<LandingPage />} /> */}
-
-            <Route element={<ProtectedRoute/>}>
-                {/* e.g <Route path='/logOut' element={<LogOut />} /> */}
-            </Route>
-        </Routes>
-    );
+  return (
+    <Routes>
+      <Route path="/auth" element={<Auth />} />
+      <Route element={<ProtectedRoute />}>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/main" element={<MainPage />} />
+        {/* Add other protected routes here */}
+      </Route>
+    </Routes>
+  );
 };
 
 export default MyRoutes;

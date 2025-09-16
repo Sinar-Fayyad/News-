@@ -1,7 +1,63 @@
-input {
-    width:20em;
-    height:2em;
-    border-radius: 50px;
-    padding-left:1em;
-    border: 1px solid rgb(223, 97, 255);
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.inputContainer {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--light);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0 45px 0 15px; /* padding right increased for eye icon */
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--primary-color, var(--info-color));
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.hideCheckbox {
+    position: absolute;
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.customCheckbox {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: url(/Assets/view.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.hideCheckbox:checked + .customCheckbox {
+    background-image: url(/Assets/sleep.gif);
 }

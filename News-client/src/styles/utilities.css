@@ -1,17 +1,64 @@
-.border{
-    border: 1px solid rgb(223, 97, 255);
+.border {
+    border: 1px solid var(--accent-color);
 }
 
-
-img{
-    width:80px;
-    height:80px;
-    margin:1vw;
+img {
+    width: 80px;
+    height: 80px;
+    margin: 1vw;
 }
 
-.divider{
-    height:1px;
-    width:100%;
+.divider {
+    height: 1px;
+    width: 100%;
     display: block;
-    background-color: rgb(223,97,255);
+    background-color: var(--accent-color);
+}
+
+/* Utility classes */
+.primary-color {
+    background-color: var(--primary-color);
+    color: var(--neutral-color);
+}
+
+.accent-color {
+    background-color: var(--accent-color);
+    color: var(--neutral-color);
+}
+
+.neutral-color {
+    color: var(--neutral-color);
+}
+
+.primary-text {
+    color: var(--primary-color);
+}
+
+.accent-text {
+    color: var(--accent-color);
+}
+
+.light-bg {
+    background-color: var(--neutral-color);
+    color: var(--dark-text);
+}
+
+.dark-text {
+    color: var(--dark-text);
+}
+
+.shadow {
+    box-shadow: var(--shadow);
+}
+
+.padding {
+    padding: var(--padding);
+}
+
+.margin {
+    margin: var(--margin);
+}
+
+.radius {
+    border-radius: var(--radius);
 }

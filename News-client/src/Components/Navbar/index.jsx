@@ -1,26 +1,60 @@
+import React from 'react';
 import styles from './style.module.css';
-import Logo from '../Logo/index'
-import Button from '../Button/index'
-import { useNavigate , useLocation } from "react-router-dom";
+import Button from '../Button/index';
 
-const Navbar = () => {
+const Navbar = ({
+    categories = [],
+    selectedCategory = 'All',
+    onCategorySelect = () => {},
+    searchQuery = '',
+    onSearchChange = () => {},
+    onLogout = () => {}
+}) => {
+    const currentDate = new Date().toLocaleDateString();
 
-    const navigate= useNavigate();
-    const location = useLocation();
+    const handleSearch = (e) => {
+        e.preventDefault();
+        // Search is handled in MainPage
+    };
 
     return (
-        <div className={`${styles.Navbar} main-color text-color`}>
-            <Logo/>
-            <div className={styles.title}>
-                <h1>Dear Future Me...</h1>
-            </div>
-            {location.pathname !== '/' &&
-                <div className={styles.links}>
-                    <a onClick = {() => {navigate('/mainPage')}}><h3>Home</h3></a>
-                    <Button title="Log out" className={'secondary-color text-color'} onClickListener={()=>navigate('/logout')}/>
-                </div>}
-        </div>
+        <>
+            <header className={styles.headContainer}>
+                <h1 className={styles.mainTitle}>Top News</h1>
+                <h3 className={styles.subtitle}>Stay Updated with the Latest Headlines</h3>
+                <p className={styles.date}>{currentDate}</p>
+                <form onSubmit={handleSearch} className={styles.searchForm}>
+                    <input
+                        type="search"
+                        name="news-search"
+                        id="search"
+                        placeholder="Search news"
+                        title="Search news"
+                        value={searchQuery}
+                        onChange={(e) => onSearchChange(e.target.value)}
+                        className={styles.searchInput}
+                    />
+                </form>
+                <Button title="Logout" className={styles.logoutBtn} onClickListener={onLogout} />
+            </header>
+            <nav className={styles.categories}>
+                {categories.map((category, index) => (
+                    <a
+                        key={index}
+                        href="#"
+                        value={category}
+                        className={selectedCategory === category ? styles.active : ''}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            onCategorySelect(category);
+                        }}
+                    >
+                        {category}
+                    </a>
+                ))}
+            </nav>
+        </>
     );
-}
+};
 
-export default Navbar
+export default Navbar;
