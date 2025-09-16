@@ -1,36 +1,51 @@
-import styles from './style.module.css'
+import styles from "./style.module.css";
 
-const Input = ({ type, name, hint, className, required, onChangeListener, label, isPassword, showPassword, onToggleShowPassword, containerClassName }) => {
+const Input = ({
+  type,
+  name,
+  hint,
+  className,
+  required,
+  onChangeListener,
+  label,
+  isPassword,
+  showPassword,
+  onToggleShowPassword,
+  containerClassName,
+}) => {
+  const inputType = isPassword ? (showPassword ? "text" : "password") : type;
 
-    const inputType = isPassword ? (showPassword ? "text" : "password") : type;
+  return (
+    <div>
+      <label type={name}>{label}</label>
+      <input
+        type={inputType}
+        name={name}
+        id={name}
+        placeholder={hint}
+        className={`${className} ${styles.input} ${
+          isPassword ? styles.pwd : ""
+        }`}
+        required={required}
+        onChange={onChangeListener}
+      ></input>
+      {isPassword && (
+        <>
+          <input
+            type="checkbox"
+            name="showPassword"
+            id={`showPassword-${name}`}
+            className={styles.hideCheckbox}
+            onChange={onToggleShowPassword}
+          />
+          <label
+            htmlFor={`showPassword-${name}`}
+            className={styles.customCheckbox}
+          ></label>
+        </>
+      )}
+    </div>
+  );
+};
 
-    return (
-        <div className={styles.inputGroup}>
-            <label type={name}>{label}</label>
-                <input
-                    type={inputType}
-                    name={name}
-                    id={name}
-                    placeholder={hint}
-                    className={`${className} ${styles.input} ${isPassword ? styles.pwd : ''}`}
-                    required={required}
-                    onChange={onChangeListener}>
-                </input>
-                {isPassword && (
-                    <>
-                        <input
-                            type="checkbox"
-                            name="showPassword"
-                            id={`showPassword-${name}`}
-                            className={styles.hideCheckbox}
-                            onChange={onToggleShowPassword}
-                        />
-                        <label htmlFor={`showPassword-${name}`} className={styles.customCheckbox}></label>
-                    </>
-                )}
-            
-        </div>
-    );
-}
-
-export default Input
+export default Input;
