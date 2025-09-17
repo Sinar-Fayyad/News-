@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="adder.css">
+        <title>Add</title>
+    </head>
+
+    <body>
+        <main>
+            <div class="add-holder">
+                <div class="adder">
+                    <input type="text" name="Title" id="newNews" placeholder='News title'>
+                    <input type="text" name="subTitle" id="subTitle" placeholder="News subtitle">
+                    <div>
+                        <input list='catList' placeholder="Select" class="categories" id="category">
+                        <datalist id="catList">
+                            <option value="Art"></option>
+                            <option value="Business"></option>
+                            <option value="Culture"></option>
+                            <option value="Entertainment"></option>
+                            <option value="Fashion"></option>
+                            <option value="Food"></option>
+                            <option value="Health"></option>
+                            <option value="Politics"></option>
+                            <option value="Science"></option>
+                            <option value="Sports"></option>
+                            <option value="Startup"></option>
+                            <option value="Technology"></option>
+                            <option value="Travel"></option>
+                            <option value="World"></option>
+                        </datalist>
+                        <input type="file" name="Image" id="coverImage">
+                    </div>
+                    <input type="text" name="Author" id="author" placeholder="Author">
+                    <input type="submit" value="News" onclick="addNews()">
+                    <a href="../Home/index.html" class="close"><img src="../Assets/X.gif" alt="X"></a>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="adder.js"></script>
+</html>
